@@ -47,7 +47,7 @@ function addImage(data, id) {
     params.append('method', 'delImage');
     params.append('id', event.target.closest('.img-container').id);
     const xhr = new XMLHttpRequest();
-    xhr.open('DELETE', `https://zippo1095-ahj-hw7-3.herokuapp.com/?${params}`);
+    xhr.open('DELETE', `https://zippo1095-ahj-hw7-3.herokuapp.com:7070/?${params}`);
     xhr.send();
     xhr.addEventListener('load', () => {
       if (xhr.status >= 200 && xhr.status < 300) {
@@ -69,7 +69,7 @@ function getImages() {
   const params = new URLSearchParams();
   params.append('method', 'allImages');
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', `https://zippo1095-ahj-hw7-3.herokuapp.com/?${params}`);
+  xhr.open('GET', `https://zippo1095-ahj-hw7-3.herokuapp.com:7070/?${params}`);
   xhr.send();
   xhr.addEventListener('load', () => {
     if (xhr.status >= 200 && xhr.status < 300) {
@@ -107,7 +107,7 @@ function sendInsert(element) {
   formData.append('img', element);
   console.log(element);
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', `https://zippo1095-ahj-hw7-3.herokuapp.com/?${params}`);
+  xhr.open('POST', `https://zippo1095-ahj-hw7-3.herokuapp.com:7070/?${params}`);
   xhr.send(formData);
   xhr.addEventListener('load', () => {
     if (xhr.status >= 200 && xhr.status < 300) {
